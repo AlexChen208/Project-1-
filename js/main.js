@@ -24,6 +24,13 @@ const colors = [
 
 // 3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant.
 const timerEl = document.getElementById('timer')
+const cards = document.getElementById('container')
+
+    // EventListner
+cards.addEventListener('click', handleClick)
+    // add a button to get the timer to start when you are ready
+    // timerEl.addEventListener('click', startClick)
+
 // 4) Upon loading the app should:
 // 	4.1) Initialize the state variables
 function initGame() {
@@ -31,12 +38,18 @@ function initGame() {
     randomBoard()
 }
 // 	4.2) Render those values to the page
-function getTimer() {
-    // create timer to add onto the board
-}
+// function getTimer() {
+//     // create timer to add onto the board
+//     const startingMinute = 1
+//     let time = startingMinute * 60
+//     const minute = Math.floor(time / 60)
+//     let seconds = time % 60
+//     timerEl.innerHTML = `${minute}:${seconds}`
+//     time--
+// }
 
 function randomBoard() {
-    // board will have different colors
+    // generate a board with different colors
 
 }
 
@@ -44,14 +57,12 @@ function randomBoard() {
 // 	4.3) Wait for the user to click a square
 
 // 5) Handle a player clicking 2 cards
-    // if cards matches, collect as a pair
-    // else if cards don't match, card disappear
-// 6) Handle a player clicking the replay button
-    // reset the game
+function startClick() {
 
+}
 
-
-
-
-
-setInterval(getTimer, 1000)
+function handleClick(evt) {
+    console.log("IT IS WORKING!!")
+}
+// setInterval(getTimer, 1000)
+initGame()
