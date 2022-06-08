@@ -32,3 +32,39 @@ h1, p{
     box-shadow: inset 0px 0px 0px 1px red;
     box-sizing: border-box;
 }
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.teal {
+    background-color: teal;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.cyan {
+    background-color: cyan;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.maroon {
+    background-color: maroon;
+}
+
+.color-hidden {
+    background-color: gray;
+}
