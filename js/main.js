@@ -82,13 +82,13 @@ let boardGame
 /*----- cached element references -----*/
   // Using more than once
 const board = document.getElementById('board')
-const cards = document.querySelectorAll('.card')
+
 /*----- event listeners -----*/
 board.addEventListener('click', flippedCard)
 
 /*----- functions -----*/
 function initGame() {
-    cards = randomColor()
+ 
 }
 
 function flippedCard(evt) {
