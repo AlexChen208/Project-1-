@@ -28,10 +28,6 @@ h1, p{
     border: solid 1px black;
 }
 
-.card:hover {
-    box-shadow: inset 0px 0px 0px 1px red;
-    box-sizing: border-box;
-}
 
 .red {
     background-color: red;

@@ -63,7 +63,7 @@
 
 // initGame()
 
- 
+
 /*----- constants -----*/
 const colorsArr = [
     'red',
@@ -77,40 +77,84 @@ const colorsArr = [
 ]
 
 /*----- app's state (variables) -----*/
-  // State - something that is always changing, something that the browser has to keep changing
-let boardGame 
+// State - something that is always changing, something that the browser has to keep changing
+// let cardClicked = null
+let turn = 0
+let firstClick = ''
+let secondClick = ''
 /*----- cached element references -----*/
-  // Using more than once
+// Using more than once
 const board = document.getElementById('board')
 
 /*----- event listeners -----*/
 board.addEventListener('click', flippedCard)
 
 /*----- functions -----*/
-function initGame() {
- 
-}
+// function initGame() {
+//     render
+// }
 
 function flippedCard(evt) {
     const target = evt.target
     target.className = target.className.replace('color-hidden', '')
-}
+    if (turn === 0) {
+        firstClick = target.getAttribute('data-color')
+        turn++
+    } else {
+        secondClick = target.getAttribute('data-color')
+        turn = 0
+        if (firstClick === secondClick) {
+            firstClick.className += 'done'
+            secondClick.className += 'done'
+        } else {
 
-
-
-// generate randomboard of color
-
-
-function randomColor(colorArray) {
-    let colorIdx = colorArray.length, randomIdx
-    while (colorIdx != 0) {
-        randomIdx = Math.floor(Math.random() * colorIdx)
-        colorIdx--
-        [colorArray[colorIdx], colorArray[randomIdx]] = [colorArray[randomIdx], colorArray[colorIdx]]
+        }
     }
-    return colorArray
+
+
+    // target.className += 'done'
+
+    // if (!cardClicked) {
+    //     cardClicked = target
+    // } else if (cardClicked) {
+    //     if (cardClicked.getAttribute('data-color') === target.getAttribute('data-color')) {
+    //         console.log('cards are the same')
+    //     } else {
+    //         console.log('cards are not the same')
+    //     }
+    // }
+
 }
 
+    // if (turn === 0) {
+    //     firstClick = target
+    //     console.log('this is the first click', firstClick)
+    //     turn++
+    // }
+    // if (turn === 1) {
+    //     secondClick =
+    // }
 
-// win/loss logical
-// find all the pairs before timer runs out
+// function render() {
+//     board = randomColor()
+// }
+
+
+// // generate randomboard of color
+
+
+// function randomColor(colorArray) {
+//     let colorIdx = colorArray.length, randomIdx
+//     while (colorIdx != 0) {
+//         randomIdx = Math.floor(Math.random() * colorIdx)
+//         colorIdx--
+//         [colorArray[colorIdx], colorArray[randomIdx]] = [colorArray[randomIdx], colorArray[colorIdx]]
+//     }
+//     return colorArray
+// }
+
+
+// // win/loss logical
+// // find all the pairs before timer runs out
+
+// initGame()
