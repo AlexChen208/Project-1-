@@ -24,14 +24,21 @@ h1, p{
     display: inline-block;
     width: 100px;
     height: 100px;
-    background-color: white;
     border: solid 1px black;
 }
+
+.card:hover {
+    border: red solid 2px
+}
+
+.card.matched:hover {
+    border: none;
+}
+
 
 #message {
     text-align: center;
 }
-
 
 .red {
     background-color: red;
