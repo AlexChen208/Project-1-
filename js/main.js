@@ -30,8 +30,22 @@ readyButton.addEventListener('click', getTimer)
 
 
 
+/*----- functions -----*/
 
+// Create a function that checks for pairs
+    // Grab firstClick and store value while revealing the color
+    // Grab secondCLick and store the value while revealing the color
+        // Also remove click function so that people can't spam any clicks
+            // If colors don't match, bring back cover that hides the color 
+                // 1) set up timer so that user has time to memorize the color 
+                // 2) make sure to have clicks back to empty string so that value isn't stored at the same click
+                // 3) enable click function again
+            // else cards do match, have a class name matched to know that the cards do match
+                // set clicks back to empty string, don't store previous data
+                // enable click function
+                // apply win/loss logic at the bottom to keep track of score    
 function flippedCard(event) {
+
     if (event.target.className.includes('matched') || firstClick === event.target) {
         return
     }
@@ -66,9 +80,11 @@ function flippedCard(event) {
 
 }
 
-
-
-function getTimer() {
+  
+// Create a timer for the game
+    // Calculate the time that I want to show on the timer and how many seconds to go down at a time
+    // If time reaches zero, end the game
+ function getTimer() {
     timerFun = setInterval(function () {
         const minute = Math.floor(time / 60)
         let seconds = time % 60
@@ -79,4 +95,22 @@ function getTimer() {
             endGame(false)
         }
     }, 1000)
-}
+ }
+  
+//  Create win/loss logic
+    // If won is true
+        // Print winner
+    // else 
+        // print loser
+ function endGame(won) {
+    if (won) {
+        message.innerHTML = 'You won the game'
+    } else {
+        message.innerHTML = 'You lose'
+    }
+    clearInterval(timerFun)
+    board.removeEventListener('click', flippedCard)
+ }
+ 
+ 
+
