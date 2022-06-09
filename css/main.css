@@ -28,6 +28,10 @@ h1, p{
     border: solid 1px black;
 }
 
+#message {
+    text-align: center;
+}
+
 
 .red {
     background-color: red;
