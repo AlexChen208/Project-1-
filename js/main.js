@@ -1,4 +1,3 @@
-
 /*----- app's state (variables) -----*/
 // State - something that is always changing, something that the browser has to keep changing
 let firstClick = ''
@@ -17,13 +16,12 @@ const message = document.getElementById('message')
 boardEl.addEventListener('click', flippedCard)
 readyButton.addEventListener('click', getTimer)
 
-
-
-/*----- functions -----*/  
+/*----- functions -----*/
 function flippedCard(event) {
     if (event.target.className.includes('matched') || firstClick === event.target) {
         return
     }
+
     if (!firstClick) {
         firstClick = event.target
         firstClick.classList.remove('color-hidden')
@@ -54,7 +52,7 @@ function flippedCard(event) {
 }
 
 function getTimer() {
-    timerFun = setInterval(function() {
+    timerFun = setInterval(function () {
         const minute = Math.floor(time / 60)
         let seconds = time % 60
         seconds = seconds < 10 ? '0' + seconds : seconds
@@ -75,8 +73,12 @@ function endGame(won) {
     clearInterval(timerFun)
     boardEl.removeEventListener('click', flippedCard)
 }
- 
- 
+
+
+
+
+
+
 
 
 
@@ -84,14 +86,14 @@ function endGame(won) {
     // Grab firstClick and store value while revealing the color
     // Grab secondCLick and store the value while revealing the color
         // Also remove click function so that people can't spam any clicks
-            // If colors don't match, bring back cover that hides the color 
-                // 1) set up timer so that user has time to memorize the color 
+            // If colors don't match, bring back cover that hides the color
+                // 1) set up timer so that user has time to memorize the color
                 // 2) make sure to have clicks back to empty string so that value isn't stored at the same click
                 // 3) enable click function again
             // else cards do match, have a class name matched to know that the cards do match
                 // set clicks back to empty string, don't store previous data
                 // enable click function
-                // apply win/loss logic at the bottom to keep track of score   
+                // apply win/loss logic at the bottom to keep track of score
 
 // Create a timer for the game
     // Calculate the time that I want to show on the timer and how many seconds to go down at a time
@@ -100,5 +102,5 @@ function endGame(won) {
 //  Create win/loss logic
     // If won is true
         // Print winner
-    // else 
+    // else
         // print loser
