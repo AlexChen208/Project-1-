@@ -8,3 +8,7 @@
 
 ### Link Down Below:
 [MemoryGame](https://AlexChen208.github.io/Project-1-/)
+
+
+### Next Steps:
+<p>Create a reset button</p>
